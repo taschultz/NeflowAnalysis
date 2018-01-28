@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "1fb510b0-0468-11e8-8515-cd542c8da404",
+    "_type": "visualization",
+    "_source": {
+      "title": "Netflow: Remote IP & Ports by Source IP",
+      "visState": "{\n  \"title\": \"Source Client IP to Remote Host and Port\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"6\",\n      \"enabled\": true,\n      \"type\": \"sum\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"netflow.bytes\",\n        \"customLabel\": \"Total Bytes\"\n      }\n    },\n    {\n      \"id\": \"5\",\n      \"enabled\": true,\n      \"type\": \"sum\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"netflow.packets\",\n        \"customLabel\": \"Total Packets\"\n      }\n    },\n    {\n      \"id\": \"7\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"netflow.server_addr\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"5\",\n        \"customLabel\": \"Remote Host\",\n        \"row\": false\n      }\n    },\n    {\n      \"id\": \"9\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"netflow.dst_port_name\",\n        \"size\": 5,\n        \"order\": \"desc\",\n        \"orderBy\": \"6\",\n        \"customLabel\": \"Destination Port\"\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "For a given Client IP address, displays the remote host and port statistics from Netflow. Be sure to adjust client address filter as required.",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"70046910-0442-11e8-8515-cd542c8da404\",\n  \"filter\": [\n    {\n      \"meta\": {\n        \"index\": \"70046910-0442-11e8-8515-cd542c8da404\",\n        \"negate\": false,\n        \"disabled\": true,\n        \"alias\": null,\n        \"type\": \"phrase\",\n        \"key\": \"netflow.client_addr\",\n        \"value\": \"192.168.10.10\",\n        \"params\": {\n          \"query\": \"192.168.10.10\",\n          \"type\": \"phrase\"\n        }\n      },\n      \"query\": {\n        \"match\": {\n          \"netflow.client_addr\": {\n            \"query\": \"192.168.10.10\",\n            \"type\": \"phrase\"\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"appState\"\n      }\n    }\n  ],\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"lucene\"\n  }\n}"
+      }
+    }
+  }
+]
