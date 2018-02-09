@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "70ef6cc0-0d3f-11e8-9e8d-a33c13406604",
+    "_type": "visualization",
+    "_source": {
+      "title": "NetFlow: Flow Count and Bytes Graphical Analysis",
+      "visState": "{\"title\":\"NetFlow: Flow Count and Bytes Graphical Analysis\",\"type\":\"network\",\"params\":{\"showLabels\":true,\"showPopup\":false,\"showColorLegend\":true,\"nodePhysics\":true,\"firstNodeColor\":\"#FD7BC4\",\"secondNodeColor\":\"#00d1ff\",\"canvasBackgroundColor\":\"#FFFFFF\",\"shapeFirstNode\":\"dot\",\"shapeSecondNode\":\"box\",\"displayArrow\":false,\"posArrow\":\"to\",\"shapeArrow\":\"arrow\",\"smoothType\":\"continuous\",\"scaleArrow\":1,\"maxCutMetricSizeNode\":100000000000000000,\"maxCutMetricSizeEdge\":100000000000000000,\"minCutMetricSizeNode\":0,\"maxNodeSize\":60,\"minNodeSize\":12,\"maxEdgeSize\":20,\"minEdgeSize\":1,\"springConstant\":0.008,\"gravitationalConstant\":-32000,\"labelColor\":\"#000000\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"size_node\",\"params\":{\"field\":\"flow.bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"count\",\"schema\":\"size_edge\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.server_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.client_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"elastiflow-*\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "f5ed2e70-0d40-11e8-9e8d-a33c13406604",
+    "_type": "visualization",
+    "_source": {
+      "title": "NetFlow: Packet Count Graphical Analysis",
+      "visState": "{\"title\":\"NetFlow: Packet Count Graphical Analysis\",\"type\":\"network\",\"params\":{\"showLabels\":true,\"showPopup\":false,\"showColorLegend\":true,\"nodePhysics\":true,\"firstNodeColor\":\"#FD7BC4\",\"secondNodeColor\":\"#00d1ff\",\"canvasBackgroundColor\":\"#FFFFFF\",\"shapeFirstNode\":\"dot\",\"shapeSecondNode\":\"box\",\"displayArrow\":false,\"posArrow\":\"to\",\"shapeArrow\":\"arrow\",\"smoothType\":\"continuous\",\"scaleArrow\":1,\"maxCutMetricSizeNode\":99999999999999,\"maxCutMetricSizeEdge\":99999999999999,\"minCutMetricSizeNode\":0,\"maxNodeSize\":60,\"minNodeSize\":12,\"maxEdgeSize\":50,\"minEdgeSize\":1,\"springConstant\":0.008,\"gravitationalConstant\":-32000,\"labelColor\":\"#000000\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"size_node\",\"params\":{\"field\":\"flow.packets\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"count\",\"schema\":\"size_edge\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.server_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.client_addr\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"elastiflow-*\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "7ca1d9d0-0d40-11e8-9e8d-a33c13406604",
+    "_type": "visualization",
+    "_source": {
+      "title": "NetFlow: Services and Bytes Graphical Analysis - All",
+      "visState": "{\"title\":\"NetFlow: Services and Bytes Graphical Analysis - All\",\"type\":\"network\",\"params\":{\"showLabels\":true,\"showPopup\":false,\"showColorLegend\":true,\"nodePhysics\":true,\"firstNodeColor\":\"#FD7BC4\",\"secondNodeColor\":\"#00d1ff\",\"canvasBackgroundColor\":\"#FFFFFF\",\"shapeFirstNode\":\"dot\",\"shapeSecondNode\":\"box\",\"displayArrow\":false,\"posArrow\":\"to\",\"shapeArrow\":\"arrow\",\"smoothType\":\"continuous\",\"scaleArrow\":1,\"maxCutMetricSizeNode\":5000,\"maxCutMetricSizeEdge\":5000,\"minCutMetricSizeNode\":0,\"maxNodeSize\":80,\"minNodeSize\":8,\"maxEdgeSize\":20,\"minEdgeSize\":0.1,\"springConstant\":0.001,\"gravitationalConstant\":-35000,\"labelColor\":\"#000000\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"size_node\",\"params\":{\"field\":\"flow.bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"count\",\"schema\":\"size_edge\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.service_name\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.client_addr\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"elastiflow-*\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "27ebc130-0d40-11e8-9e8d-a33c13406604",
+    "_type": "visualization",
+    "_source": {
+      "title": "NetFlow: Services and Bytes Graphical Analysis - To External Sources",
+      "visState": "{\"title\":\"NetFlow: Services and Bytes Graphical Analysis - To External Sources\",\"type\":\"network\",\"params\":{\"showLabels\":true,\"showPopup\":false,\"showColorLegend\":true,\"nodePhysics\":true,\"firstNodeColor\":\"#FD7BC4\",\"secondNodeColor\":\"#00d1ff\",\"canvasBackgroundColor\":\"#FFFFFF\",\"shapeFirstNode\":\"dot\",\"shapeSecondNode\":\"box\",\"displayArrow\":false,\"posArrow\":\"to\",\"shapeArrow\":\"arrow\",\"smoothType\":\"continuous\",\"scaleArrow\":1,\"maxCutMetricSizeNode\":5000,\"maxCutMetricSizeEdge\":5000,\"minCutMetricSizeNode\":0,\"maxNodeSize\":80,\"minNodeSize\":8,\"maxEdgeSize\":20,\"minEdgeSize\":0.1,\"springConstant\":0.001,\"gravitationalConstant\":-35000,\"labelColor\":\"#000000\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"size_node\",\"params\":{\"field\":\"flow.bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"count\",\"schema\":\"size_edge\",\"params\":{}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.service_name\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"first\",\"params\":{\"field\":\"flow.client_addr\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"elastiflow-*\",\"filter\":[{\"meta\":{\"index\":\"elastiflow-*\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"flow.src_locality\",\"value\":\"public\",\"params\":{\"query\":\"public\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"flow.src_locality\":{\"query\":\"public\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  }
+]
